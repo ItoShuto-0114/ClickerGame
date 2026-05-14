@@ -6,10 +6,17 @@ public class ball : MonoBehaviour
     private Vector2 _mouseReleasePos;
     private Vector2 _dir;
     private bool _isDragging;
+    [SerializeField]private float _maxX = 10;
+    [SerializeField]private float _minX = -10;
+    Vector2 _pos;
     Rigidbody2D _rb;
+    Transform _tr;
+    
     void Start()
     {
         _rb= GetComponent<Rigidbody2D>();
+        _tr= GetComponent<Transform>();
+
     }
     // Update is called once per frame
     void Update()
@@ -28,7 +35,9 @@ public class ball : MonoBehaviour
             Kick();
             _isDragging=false;
         }
-    
+        _pos = transform.position;
+        _pos.x = Mathf.Clamp(_pos.x,_minX,_maxX);
+        transform.position = _pos;
     }
     void Kick()
     {
