@@ -8,6 +8,8 @@ public class ball : MonoBehaviour
     private bool _isDragging;
     [SerializeField]private float _maxX = 10;
     [SerializeField]private float _minX = -10;
+    [SerializeField] private float _maxY = 10;
+    [SerializeField] private float _minY = -10;
     Vector2 _pos;
     Rigidbody2D _rb;
     Transform _tr;
@@ -37,6 +39,7 @@ public class ball : MonoBehaviour
         }
         _pos = transform.position;
         _pos.x = Mathf.Clamp(_pos.x,_minX,_maxX);
+        _pos.y = Mathf.Clamp(_pos.y,_minY,_maxY);
         transform.position = _pos;
     }
     void Kick()
