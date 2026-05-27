@@ -1,16 +1,19 @@
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    ball _ball;
+   [SerializeField] public TextMeshProUGUI _countUI;
+    public  int _kickCount = 0;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        _countUI.text = _kickCount.ToString(); 
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ball : MonoBehaviour
 {
-   [SerializeField] float _power = 10;
+   [SerializeField] public float _power = 10;
     [SerializeField] GameObject _ball;
     Rigidbody2D _rb;
     Transform _tr;
@@ -10,6 +10,7 @@ public class ball : MonoBehaviour
     Vector2 _dir;
     Vector2 _velo;
     float _ballSpeed;
+    [SerializeField]GameManager _gm;
     void Start()
     {
         _rb= GetComponent<Rigidbody2D>();
@@ -32,9 +33,8 @@ public class ball : MonoBehaviour
             {
                 if (hit.collider.gameObject == gameObject)
                 {
-                    Debug.Log("èRÇ¡ÇƒÇ‹Ç∑");
-                    _dir = RandomVector2();
-                    _rb.AddForce(_dir * _power);
+                    Kick();
+                    
                 }
             }
         }
@@ -43,8 +43,11 @@ public class ball : MonoBehaviour
         transform.Rotate(0, 0, -_ballSpeed * 10f * Time.deltaTime);
     }
     
-    void Kick()
+    public void Kick()
     {
-        
+        Debug.Log("ÉIÉâ");
+        _dir = RandomVector2();
+        _rb.AddForce(_dir * _power);
+        _gm._kickCount++;
     }
 }
