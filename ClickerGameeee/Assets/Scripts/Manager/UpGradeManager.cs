@@ -2,11 +2,32 @@ using UnityEngine;
 
 public class UpGradeManager : MonoBehaviour
 {
-    public int CurrentLevel => _currentLevel;
-    private int _currentLevel = 1;
+    public int CurrentPowerLevel => _currentPowerLevel;
+    private int _currentPowerLevel = 1;
+    public int CurrentMoneyLevel => _currentMoneyLevel;
+    private int _currentMoneyLevel = 1;
+    [SerializeField] GameManager _gm;
     
-    public void UpGrade()
+    public void PowerUpGrade()
     {
-        _currentLevel++;
+        if (_gm._money < _gm._powerCost)
+        {
+            Debug.Log("レベルアップできねえっす");
+            return;
+        }
+
+        _currentPowerLevel++;
+        _gm._money -= _gm._powerCost;
+    }
+    public void MoneyUpGrade()
+    {
+        if (_gm._money < _gm._moneyCost)
+        {
+            Debug.Log("レベルアップできねえっす");
+            return;
+        }
+
+        _currentMoneyLevel++;
+        _gm._money -= _gm._moneyCost;
     }
 }
