@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c82b55e150b51864eb5674d4be5b2903, type: 3}
+  m_Name: Money
+  m_EditorClassIdentifier: Assembly-CSharp::MoneyUpgradeDataBase
+  _moneyUpGradeDetas:
+  - _moneyLevel: 1
+    _money: 1
+    _moneyCost: 20
+  - _moneyLevel: 2
+    _money: 2
+    _moneyCost: 100
+  - _moneyLevel: 3
+    _money: 5
+    _moneyCost: 500
+  - _moneyLevel: 4
+    _money: 10
+    _moneyCost: 1000
+  - _moneyLevel: 5
+    _money: 15
+    _moneyCost: 2000
