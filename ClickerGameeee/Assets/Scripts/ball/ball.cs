@@ -9,6 +9,12 @@ public class ball : MonoBehaviour
     Vector2 _velo;
     float _ballSpeed;
     [SerializeField]GameManager _gm;
+    [SerializeField] private UpGradeDetaBase _dataBase;
+    [SerializeField] UpGradeManager _ugm;
+    private void Awake()
+    {
+       _dataBase.CreateDataBase();
+    }
     void Start()
     {
         _rb= GetComponent<Rigidbody2D>();
@@ -45,9 +51,10 @@ public class ball : MonoBehaviour
 
     public void Kick()
     {
-        Debug.Log(_gm._status._power);
+        UpGradedeta data = _dataBase.GetUpGradeData(_ugm.CurrentLevel);
+       Debug.Log(data.Power);
         _dir = RandomVector2();
-        _rb.AddForce(_dir * _gm._status._power);
+       _rb.AddForce(_dir * data.Power);
         _gm._kickCount++;
     }
 }

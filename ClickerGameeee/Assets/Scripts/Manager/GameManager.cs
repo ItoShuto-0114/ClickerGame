@@ -3,21 +3,21 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   [SerializeField] TextMeshProUGUI _countUI;
+    [SerializeField] private UpGradeDetaBase _dataBase;
+   [SerializeField] TextMeshProUGUI _countUI; 
     [SerializeField] TextMeshProUGUI _levelUI;
-    public UpGradedeta _status;
+    [SerializeField] TextMeshProUGUI _powerUI;
     [SerializeField] UpGradeManager _ugm;
     public int _kickCount = 0;
-    void Start()
+    private void Awake()
     {
-       
+        _dataBase.CreateDataBase();
     }
-
-    
     void Update()
     {
         _countUI.text = _kickCount.ToString();
-        _levelUI.text = "Lv." +_status._level.ToString();
-        
+        _levelUI.text = "Lv." +_ugm.CurrentLevel.ToString();  
+        UpGradedeta data = _dataBase.GetUpGradeData(_ugm.CurrentLevel);
+        _powerUI.text = data.Power.ToString();
     }
 }

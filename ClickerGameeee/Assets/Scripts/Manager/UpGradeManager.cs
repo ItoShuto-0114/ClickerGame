@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class UpGradeManager : MonoBehaviour
 {
-    [SerializeField]GameManager _gm;
-   public void UpGrade()
+    public int CurrentLevel => _currentLevel;
+    private int _currentLevel = 1;
+    
+    public void UpGrade()
     {
-        _gm._status._level++;
-        _gm._status._power += 50;
+        _currentLevel++;
     }
 }

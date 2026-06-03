@@ -1,8 +1,11 @@
 using UnityEngine;
-[System.Serializable]
-public class UpGradedeta 
+using System;
+[Serializable]
+public class UpGradedeta
 {
-    public int _level = 1;
-    public int _power = 500;
-    public int _cost;
+    public int Level => _level;
+    public int Power => _power;
+
+    [SerializeField] private int _level;
+    [SerializeField] private int _power;
 }
