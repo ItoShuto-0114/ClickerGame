@@ -9,11 +9,13 @@ public class ball : MonoBehaviour
     Vector2 _velo;
     float _ballSpeed;
     [SerializeField]GameManager _gm;
-    [SerializeField] private UpGradeDetaBase _dataBase;
+    [SerializeField] private PowerUpgradeDetaBase _powerDataBase;
+    [SerializeField] private MoneyUpgradeDataBase _moneyDataBase;
     [SerializeField] UpGradeManager _ugm;
     private void Awake()
     {
-       _dataBase.CreateDataBase();
+       _powerDataBase.CreateDataBase();
+        _moneyDataBase.CreateDataBase();
     }
     void Start()
     {
@@ -51,10 +53,14 @@ public class ball : MonoBehaviour
 
     public void Kick()
     {
-        UpGradedeta data = _dataBase.GetUpGradeData(_ugm.CurrentLevel);
-       Debug.Log(data.Power);
+        PowerUpgradedeta powerdata = _powerDataBase.GetUpGradeData(_ugm.CurrentPowerLevel);
+        MoneyUpgradedata moneydata = _moneyDataBase.GetUpGradeData(_ugm.CurrentMoneyLevel);
+
+        //Debug.Log(powerdata.Power);
         _dir = RandomVector2();
-       _rb.AddForce(_dir * data.Power);
+       _rb.AddForce(_dir * powerdata.Power);
         _gm._kickCount++;
+        _gm._money +=moneydata.Money;
+        Debug.Log(moneydata.Money);
     }
 }
