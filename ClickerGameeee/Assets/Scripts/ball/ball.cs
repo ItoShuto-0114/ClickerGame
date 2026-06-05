@@ -21,18 +21,12 @@ public class ball : MonoBehaviour
     {
         _rb= GetComponent<Rigidbody2D>();
     }
-    public static Vector2 RandomVector2()
-    {
-        Vector2 v = Vector2.zero;
-        v.x = Random.Range(-1.0f, 1.0f);
-        v.y = Random.Range(-1.0f, 1.0f);
-        return v.normalized;
-    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
             _mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            _dir = (_mousePos - (Vector2) transform.position).normalized;
             RaycastHit2D hit = Physics2D.Raycast(_mousePos, Vector2.zero);
             if (hit.collider != null)
             {
@@ -57,7 +51,7 @@ public class ball : MonoBehaviour
         MoneyUpgradedata moneydata = _moneyDataBase.GetUpGradeData(_ugm.CurrentMoneyLevel);
 
         //Debug.Log(powerdata.Power);
-        _dir = RandomVector2();
+        _dir *= -1;
        _rb.AddForce(_dir * powerdata.Power);
         _gm._kickCount++;
         _gm._money +=moneydata.Money;
