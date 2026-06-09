@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DestroyObjectDataBase
   _objectDatas:
   - _type: 0
-    _hp: 10
-    _reward: 3
-  - _type: 1
     _hp: 250
     _reward: 3
+  - _type: 1
+    _hp: 1000
+    _reward: 100
   - _type: 2
-    _hp: 500
-    _reward: 3
+    _hp: 1000
+    _reward: 300
