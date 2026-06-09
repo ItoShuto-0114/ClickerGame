@@ -5,6 +5,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private PowerUpgradeDetaBase _powerDataBase;
     [SerializeField] private MoneyUpgradeDataBase _moneyUpgradeDatabase;
+    [SerializeField] private BreakObjectDataBase _objectData;
     [SerializeField,Header("‹àUI")] TextMeshProUGUI _countUI; 
     [SerializeField,Header("PowerLv‚ÌUI")] TextMeshProUGUI _powerLevelUI;
     [SerializeField, Header("MoneyLv‚ÌUI")] TextMeshProUGUI _moneyLevelUI;
@@ -17,6 +18,8 @@ public class GameManager : MonoBehaviour
     {
         _powerDataBase.CreateDataBase();
         _moneyUpgradeDatabase.CreateDataBase();
+        _objectData.CreateDataBase();
+
     }
     void Update()
     {

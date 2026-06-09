@@ -57,4 +57,13 @@ public class ball : MonoBehaviour
         _gm._money +=moneydata.Money;
         Debug.Log(moneydata.Money);
     }
+
+     void OnCollisionEnter2D(Collision2D col)
+    {
+        PowerUpgradedeta powerdata = _powerDataBase.GetUpGradeData(_ugm.CurrentPowerLevel);
+            if (col.gameObject.TryGetComponent<BreakObject>(out var breakObject))
+            {
+                breakObject.TakeDamage(powerdata.Power);
+            }
+     }
 }
