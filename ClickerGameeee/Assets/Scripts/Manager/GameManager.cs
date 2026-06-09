@@ -14,8 +14,17 @@ public class GameManager : MonoBehaviour
     public int _powerCost = 0;
     public int _moneyCost = 0;
     public int _kickCount;
+    public static GameManager Instance { get; private set; }
+
     private void Awake()
     {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+
         _powerDataBase.CreateDataBase();
         _moneyUpgradeDatabase.CreateDataBase();
         _objectData.CreateDataBase();
