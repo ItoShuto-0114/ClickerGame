@@ -4,7 +4,6 @@ public class BreakObject : MonoBehaviour
 {
     [SerializeField] ObjectType _type;
     [SerializeField]private BreakObjectDataBase _objectDataBase;
-    [SerializeField] GameManager _gm;
     private ObjectData _data;
     int _hp;
     int _reward;
@@ -19,6 +18,7 @@ public class BreakObject : MonoBehaviour
     public void TakeDamage(int damage)
     {
         _hp -= damage;
+        Debug.Log("Žc‚èHP‚Í" + _hp);
         if (_hp <= 0)
         {
             Broken();
@@ -26,8 +26,9 @@ public class BreakObject : MonoBehaviour
     }
     public void Broken()
     {
+        Debug.Log("”j‰ó");
         Destroy(gameObject);
-        _gm._money += _reward;
+        GameManager.Instance._money += _reward;
 
     }
 }

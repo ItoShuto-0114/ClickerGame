@@ -8,7 +8,6 @@ public class ball : MonoBehaviour
     Vector2 _dir;
     Vector2 _velo;
     float _ballSpeed;
-    [SerializeField]GameManager _gm;
     [SerializeField] private PowerUpgradeDetaBase _powerDataBase;
     [SerializeField] private MoneyUpgradeDataBase _moneyDataBase;
     [SerializeField] UpGradeManager _ugm;
@@ -53,8 +52,8 @@ public class ball : MonoBehaviour
         //Debug.Log(powerdata.Power);
         _dir *= -1;
        _rb.AddForce(_dir * powerdata.Power);
-        _gm._kickCount++;
-        _gm._money +=moneydata.Money;
+        GameManager.Instance._kickCount++;
+        GameManager.Instance._money +=moneydata.Money;
         Debug.Log(moneydata.Money);
     }
 
