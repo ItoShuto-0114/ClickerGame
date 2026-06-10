@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField,Header("PowerLv‚ÌUI")] TextMeshProUGUI _powerLevelUI;
     [SerializeField, Header("MoneyLv‚ÌUI")] TextMeshProUGUI _moneyLevelUI;
     [SerializeField] UpGradeManager _ugm;
+    [SerializeField] TextMeshProUGUI _powerUpButtonText;
+    [SerializeField] TextMeshProUGUI _moneyUpButtonText;
     public int _money = 0;
     public int _powerCost = 0;
     public int _moneyCost = 0;
@@ -28,7 +31,6 @@ public class GameManager : MonoBehaviour
         _powerDataBase.CreateDataBase();
         _moneyUpgradeDatabase.CreateDataBase();
         _objectData.CreateDataBase();
-
     }
     void Update()
     {
@@ -41,9 +43,29 @@ public class GameManager : MonoBehaviour
         }
         _powerCost = powerdata.Cost;
         _moneyCost = moneydata.Cost;
+     UpdateUI();
+    }
+    void UpdateUI()
+    {
         _countUI.text = _money.ToString();
         _powerLevelUI.text = "Power Lv." + _ugm.CurrentPowerLevel.ToString();
         _moneyLevelUI.text = "Money Lv." + _ugm.CurrentMoneyLevel.ToString();
+        if (_money < _powerCost)
+        {
+            _powerUpButtonText.color = Color.red;
+        }
+        else
+        {
+            _powerUpButtonText.color = Color.black;
+        }
+        if (_money < _moneyCost)
+        {
+            _moneyUpButtonText.color = Color.red;
+        }
+        else
+        {
+            _moneyUpButtonText.color = Color.black;
+        }
     }
 }
   
