@@ -15,31 +15,31 @@ MonoBehaviour:
   _powerUpGradeDetas:
   - _powerLevel: 1
     _power: 50
-    _powerCost: 0
+    _powerCost: 10
   - _powerLevel: 2
     _power: 70
-    _powerCost: 10
+    _powerCost: 30
   - _powerLevel: 3
     _power: 100
-    _powerCost: 30
+    _powerCost: 50
   - _powerLevel: 4
     _power: 120
-    _powerCost: 50
+    _powerCost: 80
   - _powerLevel: 5
     _power: 150
-    _powerCost: 80
+    _powerCost: 120
   - _powerLevel: 6
     _power: 180
-    _powerCost: 120
+    _powerCost: 150
   - _powerLevel: 7
     _power: 220
-    _powerCost: 150
+    _powerCost: 200
   - _powerLevel: 8
     _power: 250
-    _powerCost: 200
+    _powerCost: 250
   - _powerLevel: 9
     _power: 300
-    _powerCost: 250
+    _powerCost: 300
   - _powerLevel: 10
     _power: 350
-    _powerCost: 300
+    _powerCost: 500

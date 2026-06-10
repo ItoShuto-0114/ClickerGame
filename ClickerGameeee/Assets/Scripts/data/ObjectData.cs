@@ -1,5 +1,7 @@
 using System;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum ObjectType
 {
@@ -17,7 +19,10 @@ public class ObjectData
     public int Hp => _hp;
     public int Reward => _reward;
 
+    public Sprite Sprite => _sprite;
+
     [SerializeField] private ObjectType _type;
     [SerializeField] private int _hp;
     [SerializeField] private int _reward;
+    [SerializeField] private Sprite _sprite;
 }

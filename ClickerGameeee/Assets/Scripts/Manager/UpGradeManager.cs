@@ -12,7 +12,7 @@ public class UpGradeManager : MonoBehaviour
     {
         if (_gm._money < _gm._powerCost)
         {
-            Debug.Log("レベルアップできねえっす");
+            Debug.Log("レベルアップできねえよ");
             return;
         }
 
@@ -23,7 +23,7 @@ public class UpGradeManager : MonoBehaviour
     {
         if (_gm._money < _gm._moneyCost)
         {
-            Debug.Log("レベルアップできねえっす");
+            Debug.Log("レベルアップできねえよ");
             return;
         }
 

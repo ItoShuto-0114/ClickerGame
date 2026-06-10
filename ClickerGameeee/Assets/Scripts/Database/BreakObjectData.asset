@@ -16,9 +16,12 @@ MonoBehaviour:
   - _type: 0
     _hp: 250
     _reward: 3
+    _sprite: {fileID: -2618954573778056668, guid: 23a81ef29e0c2a14581748ca827a17c9, type: 3}
   - _type: 1
     _hp: 1000
     _reward: 100
+    _sprite: {fileID: 0}
   - _type: 2
     _hp: 1000
     _reward: 300
+    _sprite: {fileID: 0}
