@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
     }
     void UpdateUI()
     {
-        _countUI.text = _money.ToString();
+        _countUI.text =_money.ToString();
         _powerLevelUI.text = "Power Lv." + _ugm.CurrentPowerLevel.ToString();
         _moneyLevelUI.text = "Money Lv." + _ugm.CurrentMoneyLevel.ToString();
         if (_money < _powerCost)

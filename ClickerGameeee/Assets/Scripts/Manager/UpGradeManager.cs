@@ -26,7 +26,6 @@ public class UpGradeManager : MonoBehaviour
             Debug.Log("レベルアップできねえよ");
             return;
         }
-
         _currentMoneyLevel++;
         _gm._money -= _gm._moneyCost;
     }

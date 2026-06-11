@@ -2,14 +2,10 @@ using UnityEngine;
 
 public class RandomObject : MonoBehaviour
 {
-    [SerializeField] public GameObject _prefabObject;
+    [SerializeField] GameObject _prefabObject;
     float _timer;
     [SerializeField] float _interval = 15;
     Vector3 _center;
-    void Start()
-    {
-      
-    }
     void Update()
     {
         _timer += Time.deltaTime;
