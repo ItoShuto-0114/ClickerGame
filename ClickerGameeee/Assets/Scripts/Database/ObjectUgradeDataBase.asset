@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0cd7904e2829cd43b193e604bb71c42, type: 3}
+  m_Name: ObjectUgradeDataBase
+  m_EditorClassIdentifier: Assembly-CSharp::ObjectUpgradeDataBase
+  _objectUpgradeData:
+  - _objectLevel: 1
+    _objectReward: 0
+    _objectLevelCost: 100
+  - _objectLevel: 2
+    _objectReward: 1
+    _objectLevelCost: 150
+  - _objectLevel: 3
+    _objectReward: 0
+    _objectLevelCost: 300
+  - _objectLevel: 4
+    _objectReward: 0
+    _objectLevelCost: 500
+  - _objectLevel: 5
+    _objectReward: 0
+    _objectLevelCost: 750
+  - _objectLevel: 6
+    _objectReward: 0
+    _objectLevelCost: 1000
+  - _objectLevel: 7
+    _objectReward: 0
+    _objectLevelCost: 1500
+  - _objectLevel: 8
+    _objectReward: 0
+    _objectLevelCost: 2000
+  - _objectLevel: 9
+    _objectReward: 0
+    _objectLevelCost: 3000
+  - _objectLevel: 10
+    _objectReward: 0
+    _objectLevelCost: 5000
