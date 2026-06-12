@@ -7,15 +7,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PowerUpgradeDetaBase _powerDataBase;
     [SerializeField] private MoneyUpgradeDataBase _moneyUpgradeDatabase;
     [SerializeField] private BreakObjectDataBase _objectData;
+    [SerializeField] private ObjectUpgradeDataBase _objectUpgradeDatabase;
     [SerializeField,Header("金UI")] TextMeshProUGUI _countUI; 
     [SerializeField,Header("PowerLvのUI")] TextMeshProUGUI _powerLevelUI;
     [SerializeField, Header("MoneyLvのUI")] TextMeshProUGUI _moneyLevelUI;
+    [SerializeField, Header("ObjectLvのUI")] TextMeshProUGUI _objectLevelUI;
     [SerializeField] UpGradeManager _ugm;
     [SerializeField] TextMeshProUGUI _powerUpButtonText;
     [SerializeField] TextMeshProUGUI _moneyUpButtonText;
+    [SerializeField] TextMeshProUGUI _objectUpButtonText;
     public int _money = 0;
     public int _powerCost = 0;
     public int _moneyCost = 0;
+    public int _objectLevelCost = 0;
     public int _kickCount;
     public static GameManager Instance { get; private set; }
 
@@ -31,18 +35,21 @@ public class GameManager : MonoBehaviour
         _powerDataBase.CreateDataBase();
         _moneyUpgradeDatabase.CreateDataBase();
         _objectData.CreateDataBase();
+        _objectUpgradeDatabase.CreateDataBase();
     }
     void Update()
     {
         PowerUpgradedeta powerdata = _powerDataBase.GetUpGradeData(_ugm.CurrentPowerLevel);
         MoneyUpgradedata moneydata = _moneyUpgradeDatabase.GetUpGradeData(_ugm.CurrentMoneyLevel);
-        if (powerdata == null || moneydata == null)
+        ObjectUpgradeData objectdata = _objectUpgradeDatabase.GetUpGradeData(_ugm.CurrentObjectLevel);
+        if (powerdata == null || moneydata == null || objectdata == null)
         {
             Debug.LogError("データねえよカス");
             return;
         }
         _powerCost = powerdata.Cost;
         _moneyCost = moneydata.Cost;
+        _objectLevelCost = objectdata.ObjectLevelCost;
      UpdateUI();
     }
     void UpdateUI()
