@@ -17,29 +17,29 @@ MonoBehaviour:
     _objectReward: 0
     _objectLevelCost: 100
   - _objectLevel: 2
-    _objectReward: 1
+    _objectReward: 5
     _objectLevelCost: 150
   - _objectLevel: 3
-    _objectReward: 0
+    _objectReward: 10
     _objectLevelCost: 300
   - _objectLevel: 4
-    _objectReward: 0
+    _objectReward: 20
     _objectLevelCost: 500
   - _objectLevel: 5
-    _objectReward: 0
+    _objectReward: 30
     _objectLevelCost: 750
   - _objectLevel: 6
-    _objectReward: 0
+    _objectReward: 50
     _objectLevelCost: 1000
   - _objectLevel: 7
-    _objectReward: 0
+    _objectReward: 75
     _objectLevelCost: 1500
   - _objectLevel: 8
-    _objectReward: 0
+    _objectReward: 100
     _objectLevelCost: 2000
   - _objectLevel: 9
-    _objectReward: 0
+    _objectReward: 125
     _objectLevelCost: 3000
   - _objectLevel: 10
-    _objectReward: 0
+    _objectReward: 150
     _objectLevelCost: 5000
